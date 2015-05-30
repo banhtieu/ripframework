@@ -47,4 +47,15 @@ class VideoServiceTest extends \PHPUnit_Framework_TestCase {
         assert(sizeof($items) > 0, "Number of results is greater than zero");
     }
 
+
+    /**
+     * Get an item
+     */
+    public function testGetItem() {
+        $service = new VideoService();
+        $item = $service->getItem(1);
+        assert(is_object($item));
+        assert(is_a($item, 'Application\\Model\\Video'));
+    }
+
 }
