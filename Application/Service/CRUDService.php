@@ -36,7 +36,7 @@ class CRUDService {
      *
      * @return array array of
      */
-    public function getAll($page, $count) {
+    public function getAll($page = null, $count = null) {
         $query = $this->collection->buildQuery();
         $query->paginate($page, $count);
         return $query->findAll();

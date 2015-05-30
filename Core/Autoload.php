@@ -11,7 +11,8 @@
  */
 function rip_auto_load($className) {
     // find the class path
-    $classPath = str_replace("\\", "/", $className . ".php");
+    $classPath = dirname(__FILE__) . "/../";
+    $classPath .= str_replace("\\", "/", $className . ".php");
 
     // if file exists then include $classPath
     if (file_exists($classPath)) {
