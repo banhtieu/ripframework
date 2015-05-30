@@ -20,7 +20,7 @@ class Collection {
     /**
      * @var string name of the collection
      */
-    private $name;
+    protected $name;
 
 
     /**

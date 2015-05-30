@@ -8,7 +8,10 @@
 
 namespace Tests;
 
+use Application\Model\Video;
 use Application\Service\VideoService;
+use Core\Database\Repository;
+use Core\Test\InMemoryCollection;
 
 
 /**
@@ -16,6 +19,23 @@ use Application\Service\VideoService;
  * @package Tests
  */
 class VideoServiceTest extends \PHPUnit_Framework_TestCase {
+
+    /**
+     * Set up the test
+     */
+    public function setUp() {
+        $videoCollection = new InMemoryCollection("Video");
+
+        $video = new Video();
+
+        $video->name = "Sample Video";
+        $video->link = "a link";
+        $video->description = "This is good";
+
+        $videoCollection->save($video);
+
+        Repository::put("Video", $videoCollection);
+    }
 
     /**
      * Test get all
