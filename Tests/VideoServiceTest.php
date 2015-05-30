@@ -8,7 +8,6 @@
 
 namespace Tests;
 
-require_once '../Core/Autoload.php';
 use Application\Service\VideoService;
 
 
