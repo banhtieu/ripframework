@@ -9,20 +9,7 @@ error_reporting(E_ALL);
 use Core\Application;
 use Core\Migration;
 
-/**
- * Autoload a class name
- * @param $className
- */
-function __autoload($className) {
-
-    // find the class path
-    $classPath = str_replace("\\", "/", $className . ".php");
-
-    // if file exists then include $classPath
-    if (file_exists($classPath)) {
-        include $classPath;
-    }
-}
+require_once 'Core/Autoload.php';
 
 // do a migration
 $migration = new Migration();
