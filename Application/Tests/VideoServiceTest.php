@@ -6,7 +6,7 @@
  * Time: 11:50 PM
  */
 
-namespace Tests;
+namespace Appliation\Tests;
 
 use Application\Model\Video;
 use Application\Service\VideoService;
