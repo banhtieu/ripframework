@@ -9,7 +9,9 @@
 
 namespace Core;
 
+use Application\Config\Configuration;
 use Application\Config\DatabaseConfig;
+use Core\Helper\AppHelper;
 
 /**
  * Class Database
@@ -36,10 +38,14 @@ class Database {
      */
     public function __construct() {
 
+        $environment = AppHelper::getEnvironment();
+        $configs = Configuration::databaseConfiguration();
+        $config = $configs[$environment];
+
         // set up the connection
-        $this->pdo = new \PDO(DatabaseConfig::CONNECTION_STRING,
-                            DatabaseConfig::USERNAME,
-                            DatabaseConfig::PASSWORD);
+        $this->pdo = new \PDO($config->dsn,
+                                    $config->username,
+                                    $config->password);
     }
 
 

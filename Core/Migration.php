@@ -25,8 +25,9 @@ class Migration {
 
     /**
      * Migrate current database
+     * @param $dropTable bool drop the table
      */
-    public function execute() {
+    public function execute($dropTable = false) {
         $this->database = Database::getInstance();
 
         $modelDir = "Application/Model";
@@ -35,7 +36,7 @@ class Migration {
         // there is fileName
         while (($fileName = readdir($file)) !== false) {
             if (substr($fileName, -4) == ".php") {
-                $this->migrateTable($modelDir . "/" . $fileName);
+                $this->migrateTable($modelDir . "/" . $fileName, $dropTable);
             }
         }
     }
@@ -78,8 +79,9 @@ class Migration {
      *
      * Migrate a table
      * @param string $fileName
+     * @param $dropTable bool drop the table
      */
-    public function migrateTable($fileName) {
+    public function migrateTable($fileName, $dropTable) {
 
         include_once ($fileName);
         $className = "Application\\Model\\" . basename($fileName, ".php");
@@ -92,9 +94,14 @@ class Migration {
         $reflector = new \ReflectionClass($item);
         // get name of the table
         $tableName = NameDecorator::getTableName($reflector->getShortName());
+        $dbColumns = false;
 
-        $query = "SHOW COLUMNS IN `$tableName`";
-        $dbColumns = $this->database->executeQuery($query, "Core\\Database\\DBColumn");
+        if ($dropTable) {
+            $this->database->executeQuery("DROP TABLE $tableName");
+        } else {
+            $query = "SHOW COLUMNS IN `$tableName`";
+            $dbColumns = $this->database->executeQuery($query, "Core\\Database\\DBColumn");
+        }
 
         // if there is no such table, create it
         if ($dbColumns === false || sizeof($dbColumns) == 0) {

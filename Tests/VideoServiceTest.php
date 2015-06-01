@@ -10,31 +10,28 @@ namespace Tests;
 
 use Application\Model\Video;
 use Application\Service\VideoService;
-use Core\Database\Repository;
-use Core\Test\InMemoryCollection;
 
 
 /**
- * Class VideoServiceTest
  * @package Tests
  */
 class VideoServiceTest extends \PHPUnit_Framework_TestCase {
 
     /**
-     * Set up the test
+     * Test save
      */
-    public function setUp() {
-        $videoCollection = new InMemoryCollection("Video");
+    public function testSave() {
+        $service = new VideoService();
+        $inputVideo = new Video();
+        $inputVideo->name = 'Sample Video';
+        $inputVideo->description = 'A video';
+        $inputVideo->link = 'a link';
 
-        $video = new Video();
+        $video = $service->save($inputVideo);
 
-        $video->name = "Sample Video";
-        $video->link = "a link";
-        $video->description = "This is good";
-
-        $videoCollection->save($video);
-
-        Repository::put("Video", $videoCollection);
+        assert($video != null, 'There is returned value');
+        assert(isset($video->id), 'There is id returned');
+        assert($video->id > 0, 'Returned id is greater than zero');
     }
 
     /**
