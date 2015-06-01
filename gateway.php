@@ -11,15 +11,19 @@ use Core\Migration;
 
 require_once 'Core/Autoload.php';
 
-// do a migration
-$migration = new Migration();
-$migration->execute();
+function main() {
+    // do a migration
+    $migration = new Migration();
+    $migration->execute();
 
-// initialize an application
-$application = new Application();
-$application->render();
+    // initialize an application
+    $application = new Application();
+    $application->render();
 
-$scanner = new \Core\Service\ServiceManager();
-$scanner->scan();
+    $serviceManager = new \Core\Service\ServiceManager();
+    $serviceManager->scan();
 
-$scanner->processRequest();
+    $serviceManager->processRequest();
+}
+
+main();
