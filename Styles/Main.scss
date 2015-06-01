@@ -1,9 +1,36 @@
+$block-padding: 10px;
+$header-color: #5a5eff;
+$header-height: 250px;
+$logo-text: #fff;
+
+$site-width: 1000px;
+
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: Roboto Arial;
+  font-family: Questrial, Arial;
+  padding: 0px;
+  margin: 0px;
 }
 
 
+.block {
+  padding: $block-padding;
+}
+
+.wrapper {
+  max-width: $site-width;
+  margin: 0px auto;
+}
+
+.header {
+  background-color: $header-color;
+
+  h1.title {
+    color: $logo-text;
+    font-weight: 300;
+  }
+}

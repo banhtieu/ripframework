@@ -2,6 +2,21 @@
   box-sizing: border-box; }
 
 body {
-  font-family: Roboto Arial; }
+  font-family: Questrial, Arial;
+  padding: 0px;
+  margin: 0px; }
+
+.block {
+  padding: 10px; }
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0px auto; }
+
+.header {
+  background-color: #5a5eff; }
+  .header h1.title {
+    color: #fff;
+    font-weight: 300; }
 
 /*# sourceMappingURL=Main.css.map */
