@@ -30,7 +30,6 @@ preg_match($pattern, $html, $matches);
 
 $token = $matches[1];
 
-var_dump($token);
 $data = array(
     "packagename" => $package_name,
     "t" => $t,
