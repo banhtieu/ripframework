@@ -6,7 +6,11 @@
  * Time: 12:12 AM
  */
 
-$package_name = $_GET["p"];
+if (isset($_GET["p"])) {
+    $package_name = $_GET["p"];
+} else {
+    $package_name = "com.hola.launcher";
+}
 
 $html = file_get_contents("https://apps.evozi.com/apk-downloader/?id=$package_name");
 $pattern = "/\\{packagename:[^\\}]+\\}/";
@@ -55,7 +59,8 @@ $opts = array('http' =>
 $context  = stream_context_create($opts);
 
 $result = file_get_contents('https://api-apk.evozi.com/download', false, $context);
-$url = $result["url"];
+$result = json_decode($result);
+$url = $result->url;
 
 ?>
 <a href="<?php echo $url; ?>">Download</a>
