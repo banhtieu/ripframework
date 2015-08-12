@@ -14,7 +14,6 @@ $pattern = "/\\{packagename:[^\\}]+\\}/";
 preg_match($pattern, $html, $matches);
 
 $result = $matches[0];
-var_dump($result);
 
 $pattern = "/(\\b[^:]+):\\s+([^,]+),/";
 preg_match_all($pattern, $result, $matches);
@@ -23,10 +22,6 @@ preg_match_all($pattern, $result, $matches);
 $t = $matches[2][1];
 $token_name = $matches[1][2];
 $variable_name = $matches[2][2];
-
-var_dump($t);
-var_dump($token_name);
-var_dump($variable_name);
 
 
 
