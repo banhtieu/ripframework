@@ -24,7 +24,7 @@ function main() {
     $migration->execute();
 
     echo "After migration";
-    
+
     // initialize an application
     $application = new Application();
     $application->render();
@@ -35,4 +35,11 @@ function main() {
     $serviceManager->processRequest();
 }
 
-main();
+try {
+    main();
+}catch (Exception $e){
+    echo "Exception ";
+    echo "<pre>";
+    var_dump($e);
+    echo "</pre>";
+}

@@ -38,6 +38,8 @@ class Database {
      */
     public function __construct() {
 
+        echo "Trying to connect to database";
+
         $environment = AppHelper::getEnvironment();
         $configs = Configuration::databaseConfiguration();
         $config = $configs[$environment];
@@ -46,6 +48,8 @@ class Database {
         $this->pdo = new \PDO($config->dsn,
                                     $config->username,
                                     $config->password);
+
+        echo "Cannot connect to database";
     }
 
 
