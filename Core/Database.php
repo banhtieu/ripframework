@@ -41,15 +41,25 @@ class Database {
         echo "Trying to connect to database";
 
         $environment = AppHelper::getEnvironment();
+
+        echo "Get environment $environment";
+
         $configs = Configuration::databaseConfiguration();
+
+        echo "Get database configuration";
+
         $config = $configs[$environment];
 
-        // set up the connection
-        $this->pdo = new \PDO($config->dsn,
-                                    $config->username,
-                                    $config->password);
+        try {
+            // set up the connection
+            $this->pdo = new \PDO($config->dsn,
+                $config->username,
+                $config->password);
+        } catch (\PDOException $e) {
+            echo "Cannot connect to database " . $e->getMessage();
+        }
 
-        echo "Cannot connect to database";
+        echo "Finish";
     }
 
 
