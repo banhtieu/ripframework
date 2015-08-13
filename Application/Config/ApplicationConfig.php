@@ -13,14 +13,14 @@ use Core\Database\DatabaseConfig;
  * Class Configuration
  * @package Application\Config
  */
-class Configuration {
+class ApplicationConfig {
 
     /**
      * @return DatabaseConfig[] the database configuration
      */
     public static function databaseConfiguration() {
         echo "Get database configuration";
-        
+
         return [
             'dev' => new DatabaseConfig('mysql:host=127.0.0.1;dbname=ripframework_dev', 'root', ''),
             'test' => new DatabaseConfig('mysql:host=127.0.0.1;dbname=ripframework_test', 'root', ''),

@@ -9,7 +9,7 @@
 
 namespace Core;
 
-use Application\Config\Configuration;
+use Application\Config\ApplicationConfig;
 use Application\Config\DatabaseConfig;
 use Core\Helper\AppHelper;
 
@@ -44,7 +44,7 @@ class Database {
 
         echo "Get environment $environment";
 
-        $configs = Configuration::databaseConfiguration();
+        $configs = ApplicationConfig::databaseConfiguration();
 
         echo "Get database configuration";
 
