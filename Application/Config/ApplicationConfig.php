@@ -19,7 +19,6 @@ class ApplicationConfig {
      * @return DatabaseConfig[] the database configuration
      */
     public static function databaseConfiguration() {
-        echo "Get database configuration";
 
         return array(
             'dev' => new DatabaseConfig('mysql:host=127.0.0.1;dbname=ripframework_dev', 'root', ''),

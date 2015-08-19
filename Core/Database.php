@@ -38,17 +38,9 @@ class Database {
      */
     public function __construct() {
 
-        echo "Trying to connect to database";
-
         $environment = AppHelper::getEnvironment();
 
-        echo "Get environment $environment";
-
-        var_dump(ApplicationConfig);
-
         $configs = ApplicationConfig::databaseConfiguration();
-
-        echo "Get database configuration";
 
         $config = $configs[$environment];
 
@@ -60,8 +52,6 @@ class Database {
         } catch (\PDOException $e) {
             echo "Cannot connect to database " . $e->getMessage();
         }
-
-        echo "Finish";
     }
 
 
