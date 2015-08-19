@@ -44,6 +44,8 @@ class Database {
 
         echo "Get environment $environment";
 
+        var_dump(ApplicationConfig);
+
         $configs = ApplicationConfig::databaseConfiguration();
 
         echo "Get database configuration";
