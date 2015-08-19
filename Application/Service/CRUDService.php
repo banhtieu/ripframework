@@ -8,7 +8,11 @@
 
 namespace Application\Service;
 
-
+/**
+ * Class CRUDService
+ * @package Application\Service
+ * @base(/none)
+ */
 class CRUDService {
 
     /**

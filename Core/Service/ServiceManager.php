@@ -101,6 +101,10 @@ class ServiceManager {
             }
         }
 
-        $targetOperation->execute();
+        if ($targetOperation != null) {
+            $targetOperation->execute();
+        } else {
+            throw new \Exception("Page not found!!");
+        }
     }
 }

@@ -28,8 +28,10 @@ function main() {
 try {
     main();
 }catch (Exception $e){
-    echo "Exception ";
-    echo "<pre>";
-    var_dump($e);
-    echo "</pre>";
+    header("Content-Type: application/json");
+    echo json_encode(array(
+        'exception' => true,
+        'message' => $e->getMessage(),
+        'stackTrace' => $e->getTraceAsString(),
+    ));
 }
