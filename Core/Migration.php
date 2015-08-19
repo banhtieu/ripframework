@@ -28,11 +28,8 @@ class Migration {
      * @param $dropTable bool drop the table
      */
     public function execute($dropTable = false) {
-        echo "Get Database Instance";
         $this->database = Database::getInstance();
-
-        echo "Finish get database";
-
+        
         $modelDir = "Application/Model";
         $file = opendir($modelDir);
 
