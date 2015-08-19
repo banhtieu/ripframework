@@ -21,10 +21,10 @@ class ApplicationConfig {
     public static function databaseConfiguration() {
         echo "Get database configuration";
 
-        return [
+        return array(
             'dev' => new DatabaseConfig('mysql:host=127.0.0.1;dbname=ripframework_dev', 'root', ''),
             'test' => new DatabaseConfig('mysql:host=127.0.0.1;dbname=ripframework_test', 'root', ''),
             'production' => new DatabaseConfig('mysql:host=localhost;dbname=dailypla_ripframework', 'dailypla_root', 'fbnd?u&ONH26')
-        ];
+        );
     }
 }
