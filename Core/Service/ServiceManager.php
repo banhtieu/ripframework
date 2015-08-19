@@ -85,7 +85,12 @@ class ServiceManager {
     public function processRequest() {
         $maxScore = 0;
         $targetOperation = null;
-        $path = $_SERVER["PATH_INFO"];
+
+        if (isset($_SERVER["PATH_INFO"])){
+            $path = $_SERVER["PATH_INFO"];
+        } else {
+            $path = "/";
+        }
 
         foreach ($this->operations as $operation) {
             $score = $operation->match($path);
