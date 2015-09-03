@@ -1,0 +1,179 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", Menlo, roboto;
+  transition-timing-function: ease-in-out; }
+
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.25); }
+
+::moz-input-placeholder {
+  color: rgba(0, 0, 0, 0.25); }
+
+:ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.25); }
+
+body {
+  background-color: #fff;
+  color: #666; }
+
+.navigation {
+  background-color: #419EF7;
+  color: white;
+  padding: 0px; }
+  .navigation .items {
+    padding: 10px;
+    display: inline-block; }
+  .navigation .logo {
+    font-size: 15pt; }
+  .navigation .menu {
+    display: inline-table;
+    padding: 0px;
+    margin: 0px; }
+    .navigation .menu li {
+      display: table-cell;
+      width: auto;
+      min-width: 50px;
+      border: 0px;
+      color: white;
+      font-weight: bolder; }
+      .navigation .menu li:active {
+        background-color: rgba(0, 0, 0, 0.15);
+        border: 0px; }
+      .navigation .menu li:after {
+        display: none; }
+
+.container {
+  padding: 10px; }
+
+.button, .text-field, .menu li {
+  display: inline-block;
+  border: 1px solid transparent;
+  background-color: #419EF7;
+  padding: 5px 5px;
+  font-size: 11pt;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  position: relative; }
+  .button:hover, .text-field:hover, .menu li:hover {
+    opacity: 0.8; }
+  .button:active, .text-field:active, .menu li:active {
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent; }
+  .button::before, .text-field::before, .menu li::before {
+    content: " ";
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    margin: 0px auto;
+    transition-duration: 0.25s;
+    top: 0px;
+    left: 0px;
+    bottom: 0px; }
+  .button:active::before, .text-field:active::before, .menu li:active::before {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.15); }
+
+.text-field {
+  opacity: 0.5;
+  outline: none; }
+  .text-field .button {
+    padding: 0px;
+    background: transparent; }
+  .text-field input {
+    border: 0px;
+    background: transparent;
+    font-size: 11pt;
+    color: white;
+    outline: none; }
+
+.text-field:focus, .text-field.focus {
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent; }
+
+.form .form-element {
+  padding: 2px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.025);
+  border-top: 1px solid rgba(255, 255, 255, 0.015); }
+  .form .form-element .text-field {
+    border-radius: 0px; }
+  .form .form-element label {
+    display: inline-block;
+    min-width: 20%; }
+
+.pull-right {
+  float: right; }
+
+.layout {
+  width: 100%;
+  min-height: 100%;
+  padding: 0px;
+  margin: 0px; }
+  .layout .column.left, .layout .column.right {
+    width: 200px;
+    float: left; }
+  .layout .column.main {
+    margin-left: 200px;
+    box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    min-height: 100%; }
+
+.menu li {
+  list-style: none;
+  width: 100%;
+  border-radius: 0px;
+  background-color: transparent;
+  color: #666;
+  padding: 10px; }
+  .menu li:active {
+    box-shadow: none; }
+
+.menu li, .bordered {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+  position: relative; }
+  .menu li:after, .bordered:after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    content: " ";
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    clear: both; }
+
+.editor {
+  min-height: 80px;
+  border: 0px;
+  width: 100%;
+  outline: none;
+  font-size: 13pt;
+  resize: none; }
+
+.clear {
+  clear: both;
+  height: 1px; }
+
+.post .info {
+  display: table-cell;
+  width: 60px;
+  min-height: 60px;
+  padding: 0px 0px 0px 0px !important;
+  position: relative; }
+  .post .info .avatar {
+    position: absolute;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    background: #419EF7;
+    border-radius: 50%; }
+
+.post .content {
+  display: table-cell; }
+  .post .content .detail {
+    padding: 0px 10px 10px 0px; }
+  .post .content .chat {
+    color: #666;
+    border: 1px solid rgba(0, 0, 0, 0.005); }

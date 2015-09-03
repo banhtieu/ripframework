@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>Design</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./Styles/design.css" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="Styles/design.js"></script>
+</head>
+<body>
+	<nav class='navigation'>
+		<div class="pull-right">
+			<div class="items">
+				<span class="text-field">
+					<input type="text" placeholder="Search..." />
+					<button  class="button">
+						<i class="fa fa-search"></i>
+					</button>
+				</span>
+			</div>
+		</div>
+		<div class="items">
+			<button class="button">
+				<i class="fa fa-bars"></i>
+			</button>
+			<span class='logo'>Swift Viet</span>
+		</div>
+		<ul class="menu">
+			<li>
+				<i class="fa fa-home"></i>
+				Home
+			</li>
+			<li>
+				<i class="fa fa-tag"></i>
+				Tags
+			</li>
+		</ul>
+			
+	</nav>
+	<div class="layout">
+		<div class="left column">
+			<ul class="menu">
+				<li><i class='fa fa-calendar-o'></i> Latest</li>
+				<li><i class='fa fa-star'></i> Following</li>
+				<li><i class='fa fa-heartbeat'></i> Trending</li> 
+			</ul>
+		</div>
+		<div class="main column">
+			<div class="bordered container post">
+				<div class="info">
+					<div class="avatar">&nbsp;</div>
+				</div>
+				<div class="content">
+					<div class="detail container no-padding-top">
+						<b>Daniel</b> <small>4 minutes ago</small>
+					</div>
+					<div class='chat'>
+						I have a collection of people. I want them to appear just like the red bubbles in apple music. (as shared in the image below). I want to recreate the whole experience of selection of an artist in apple music. How can I do that?
+					</div>
+				</div>
+			</div>
+			<div class="bordered container post">
+				<div class="info">
+					<div class="avatar">&nbsp;</div>
+				</div>
+				<div class="content">
+					<div class="detail container no-padding-top">
+						<b>Daniel</b> <small>4 minutes ago</small>
+					</div>
+					<div class='chat'>
+						Oh really?
+					</div>
+				</div>
+			</div>
+
+			<div class="bordered container">
+				<textarea class="editor" placeholder="Start a new topic..."></textarea>
+				<div class="pull-right">
+					<button class="button">
+						<i class="fa fa-send"></i>
+						Start Topic
+					</button>
+				</div>
+				<div class="clear">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

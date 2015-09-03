@@ -1,0 +1,259 @@
+$text-color: #666;
+$section-background: #fff;
+$bg-color: #419EF7;
+$shadow-color: rgba(0, 0, 0, 1.0);
+$shadow: 0px 0px 6px $shadow-color;
+$padding: 10px;
+$font: "Roboto", Menlo, roboto;
+$border-radius: 3px;
+$placeholder-color: rgba(0, 0, 0, 0.25);
+
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	font-family: $font;
+	transition-timing-function: ease-in-out;
+}
+
+::-webkit-input-placeholder {
+	color: $placeholder-color;
+}
+
+::moz-input-placeholder {
+	color: $placeholder-color;
+}
+
+:ms-input-placeholder {
+	color: $placeholder-color;
+}
+
+body {
+	background-color: $section-background;
+	color: $text-color;
+}
+
+.navigation {
+	background-color: $bg-color;
+	color: white;
+	padding: 0px;
+		
+	.items {
+		padding: $padding;
+		display: inline-block;
+	}
+	
+	.logo {
+		font-size: 15pt;
+	}
+	
+	.menu {
+		display: inline-table;
+		padding: 0px;
+		margin: 0px;
+		
+		li {
+			display: table-cell;
+			width: auto;
+			min-width: 50px;
+			border: 0px;
+			color: white;
+			font-weight: bolder;
+						
+			&:active{
+				background-color: rgba(0, 0, 0, 0.15);
+				border: 0px;
+			}
+			
+			&:after{
+				display: none;
+			}
+		}
+	}
+}
+
+.container {
+	padding: $padding;
+}
+
+.button, .text-field, .menu li {
+	display: inline-block;
+	border: 1px solid transparent;
+	background-color: $bg-color;
+	padding: 5px 5px;
+	font-size: 11pt;
+	color: white;
+	border-radius: $border-radius;
+	cursor: pointer;
+	transition-duration: 0.25s;
+	position: relative;
+	
+	&:hover {
+		opacity: 0.8;
+	}
+	
+	&:active {
+		box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+		border: 1px solid transparent;
+	}
+	
+	&::before{
+		content: " ";
+		background-color: rgba(0, 0, 0, 0.0);
+		display: block;
+		position: absolute;
+		margin: 0px auto;
+		transition-duration: 0.25s;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+	}
+	
+	&:active::before{
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.15);
+	}
+}
+
+.text-field {
+	opacity: 0.5;
+	outline: none;
+	
+	.button {
+		padding: 0px;
+		background: transparent;
+	}
+	
+	input {
+		border: 0px;
+		background: transparent;
+		font-size: 11pt;
+		color: white;
+		outline: none;
+	}
+
+}
+
+.text-field:focus, .text-field.focus {
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.25);
+	border: 1px solid transparent;
+}
+
+.form {
+	.form-element {
+		padding: 2px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.025);
+		border-top: 1px solid rgba(255, 255, 255, 0.015);
+		
+		.text-field {
+			border-radius: 0px;
+		}
+		
+		label {
+			display: inline-block;
+			min-width: 20%;
+		}
+	}
+}
+
+.pull-right {
+	float: right;
+}
+
+.layout {
+	width: 100%;
+	min-height: 100%;
+	padding: 0px;
+	margin: 0px;
+
+	.column {
+		&.left, &.right {
+			width: 200px;
+			float: left;
+		}
+		
+		&.main {
+			margin-left: 200px;
+			box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.15);
+			background-color: #fff;
+			min-height: 100%;
+		}
+	}
+}
+
+.menu {
+	li {
+		list-style: none;
+		width: 100%;
+		border-radius: 0px;
+		background-color: transparent;
+		color: $text-color;
+		padding: 10px;
+		
+		&:active{
+			box-shadow: none;
+		}
+	}
+}
+
+.menu li, .bordered {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+	position: relative;
+	
+	&:after	{
+		position: absolute;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		content: " ";
+		display: block;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+		clear: both;
+	}
+}
+
+.editor {
+	min-height: 80px;
+	border: 0px;
+	width: 100%;
+	outline: none;
+	font-size: 13pt;
+	resize: none;
+}
+
+.clear {
+	clear: both;
+	height: 1px;
+}
+
+.post {
+	.info {
+		display: table-cell;
+		width: 60px;
+		min-height: 60px;
+		padding: 0px 0px 0px 0px !important;
+		position: relative;
+				
+		.avatar {
+			position: absolute;
+			top: 0px;
+			width: 50px;
+			height: 50px;
+			background: $bg-color;
+			border-radius: 50%;	
+		}
+	}
+	
+	.content {
+		display: table-cell;
+		
+		.detail {
+			padding: 0px 10px 10px 0px;
+		}
+		
+		.chat {
+			color: $text-color;
+			border: 1px solid rgba(0, 0, 0, 0.005);
+		}
+	}
+}
